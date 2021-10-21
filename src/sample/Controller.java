@@ -9,6 +9,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -46,15 +48,30 @@ public class Controller {
         if(checkBlank())
         {
 
-            Student newStudent = new Student("Quinn",24, 12346, true  );
+            Student newStudent = new Student(txtFirstName.getText(),24, 12346, true  );
             studentList.add(newStudent);
+            clear();
         }
 
     }
 
     @FXML
-    void SaveToText(ActionEvent event) {
+    void SaveToText(ActionEvent event) throws IOException {
             printList();
+
+        try {
+            FileWriter myWriter = new FileWriter("StudentList.txt");
+            for(Student s : studentList){
+                System.out.println(s.ToString());
+                myWriter.write(s.ToString());
+            }
+
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
     //Check for blanks will implement later
     public Boolean checkBlank(){
@@ -66,6 +83,13 @@ public class Controller {
         for(Student s :studentList){
             System.out.println(s.ToString());
         }
+    }
+
+    public void clear(){
+        txtFirstName.clear();
+        txtLastName.clear();
+        txtMidName.clear();
+
     }
 
 }

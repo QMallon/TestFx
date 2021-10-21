@@ -26,7 +26,7 @@ public class Student {
             UndergradStatus = isUnderGrad;
         }
         //To String override for the student profile class
-        public  String ToString()
+        public String ToString()
     {
         String output = "";
         output += "Student Name: " + StudentName;
