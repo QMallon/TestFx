@@ -1,6 +1,7 @@
 package Student;
 
-import java.util.Date;
+
+
 //A modified version of my C# student profile class
 public class Student {
    
@@ -11,17 +12,17 @@ public class Student {
 
         int StudentAge;
         int StudentTUID;
-        Date GradDate;
+        //LocalDateTime GradDate;
         Boolean UndergradStatus;
         //create student profile
-        public Student( String name, int age,  Date graduationDate, int TUID, String email, String major, Boolean isUnderGrad)
+        public Student( String name, int age,  int TUID, Boolean isUnderGrad)
         {
             StudentName = name;
-            StudentPhone = phoneNum;
+
 
             StudentAge = age;
             StudentTUID = TUID;
-            GradDate = graduationDate;
+
             UndergradStatus = isUnderGrad;
         }
         //To String override for the student profile class
@@ -29,10 +30,10 @@ public class Student {
     {
         String output = "";
         output += "Student Name: " + StudentName;
-        output += " Student Phone: " + StudentPhone;
+
         output += " Student Age: " + StudentAge;
         output += " Student TUID: " + StudentTUID;
-        output += " Student Graduation Date: " + GradDate;
+
         if (UndergradStatus)
         {
             output += " Student is: " + "undergraduate";
