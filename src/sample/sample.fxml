@@ -1,8 +1,47 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints maxHeight="0.0" minHeight="10.0" prefHeight="30.0" />
+   </rowConstraints>
+   <children>
+      <Label text="Last Name" />
+      <TextField fx:id="txtMidName" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <TextField fx:id="txtFirstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="First Name" GridPane.columnIndex="1" />
+      <Label text="Middle Name" GridPane.columnIndex="2" />
+      <TextField fx:id="txtLastName" GridPane.rowIndex="1" />
+      <Label text="Date of Birth" GridPane.rowIndex="2" />
+      <DatePicker fx:id="dpDOB" GridPane.rowIndex="3" />
+      <DatePicker fx:id="dpEG" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label minWidth="-Infinity" prefHeight="17.0" prefWidth="122.0" text="Expected Graduation Date" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Student Id" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" onAction="#SaveStudent" text="Save Student" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Button mnemonicParsing="false" onAction="#SaveToText" text="Save to Text file" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <Button fx:id="btnExit" mnemonicParsing="false" onAction="#Close" text="Exit" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+   </children>
 </GridPane>
